@@ -1,1 +1,566 @@
-<docsting class="html"></docsting>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Anis AHMED ZAID · Ingénieur en Intelligence Artificielle (NLP, LLM, RAG)</title>
+  <meta name="description" content="Portfolio d'Anis AHMED ZAID, ingénieur en IA (ENSICAEN) spécialisé en NLP, Vision, automatisation, LLM, RAG et déploiement. Projets, expériences et CV téléchargeable." />
+  <meta name="theme-color" content="#0A84FF" />
+  <meta name="color-scheme" content="dark light" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Anis AHMED ZAID · Ingénieur en Intelligence Artificielle" />
+  <meta property="og:description" content="NLP · Vision · Automatisation · LLM · RAG · Déploiement" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'%3E%3Crect width='100%25' height='100%25' fill='%23121A24'/%3E%3Ctext x='50%25' y='52%25' fill='%23FFFFFF' font-family='Inter,Arial' font-size='64' text-anchor='middle'%3EAnis AHMED ZAID%3C/text%3E%3Ctext x='50%25' y='64%25' fill='%230A84FF' font-family='Inter,Arial' font-size='28' text-anchor='middle'%3EIngénieur en Intelligence Artificielle%3C/text%3E%3C/svg%3E" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon inline (data URI, aucun fichier externe) -->
+  <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%230A84FF'/%3E%3Cstop offset='100%25' stop-color='%235BBBFF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect rx='14' ry='14' width='64' height='64' fill='url(%23g)'/%3E%3Cpath d='M18 33c0-9 7-16 16-16s16 7 16 16-7 16-16 16c-4 0-7-2-10-4l-9 3 3-9c-2-3-3-6-3-9z' fill='%23fff' opacity='.95'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts (autorisé: toujours un seul fichier HTML, pas de CSS/JS séparés) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ====== Design tokens ====== */
+    :root{
+      --bg: #0b1220;
+      --bg-soft: #0f172a;
+      --card: #111827;
+      --muted: #cbd5e1;
+      --text: #e5e7eb;
+      --primary: #0A84FF;
+      --primary-600:#0077ED;
+      --ring: 0 0 0 3px rgb(10 132 255 / .25);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --radius-sm: 12px;
+      --radius-lg: 20px;
+      --maxw: 1120px;
+    }
+
+    /* Light mode */
+    @media (prefers-color-scheme: light) {
+      :root{
+        --bg: #f8fafc;
+        --bg-soft: #f1f5f9;
+        --card: #ffffff;
+        --muted: #475569;
+        --text: #0f172a;
+        --shadow: 0 10px 30px rgba(2,6,23,.08);
+      }
+    }
+
+    /* ====== Base ====== */
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 70% -10%, rgba(10,132,255,.15), transparent 50%) , var(--bg);
+      line-height:1.6;
+    }
+    a{color: var(--primary); text-decoration: none;}
+    a:hover{text-decoration: underline;}
+    img{max-width:100%; display:block}
+    .container{max-width: var(--maxw); margin-inline:auto; padding: 0 20px}
+
+    /* ====== Header / Nav ====== */
+    header{
+      position: sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: color-mix(in srgb, var(--bg) 80%, transparent);
+      border-bottom: 1px solid color-mix(in srgb, var(--text) 12%, transparent);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      height:64px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; font-weight:600;
+      letter-spacing:.2px;
+    }
+    .brand .dot{width:10px; height:10px; border-radius:999px; background:linear-gradient(135deg,var(--primary),#5BBBFF)}
+    nav ul{display:flex; gap:20px; list-style:none; margin:0; padding:0}
+    nav a{padding:8px 12px; border-radius:10px}
+    nav a:hover{background: color-mix(in srgb, var(--text) 10%, transparent); text-decoration:none}
+
+    /* ====== Hero ====== */
+    .hero{
+      padding: clamp(48px, 8vw, 96px) 0 32px;
+      display:grid; grid-template-columns: 1.1fr .9fr; gap:32px; align-items:center;
+    }
+    .hero-card{
+      background: linear-gradient(180deg, color-mix(in srgb, var(--card) 88%, transparent), var(--card));
+      border:1px solid color-mix(in srgb, var(--text) 10%, transparent);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: clamp(20px, 4vw, 32px);
+      display:flex; align-items:center; gap:20px;
+    }
+    .avatar{
+      width:88px; height:88px; border-radius:16px; overflow:hidden; flex:0 0 88px;
+      border:1px solid color-mix(in srgb, var(--text) 12%, transparent)
+    }
+    .kicker{color: var(--muted); font-size:14px; letter-spacing:.3px}
+    h1{margin:6px 0 10px; line-height:1.15; font-size: clamp(28px, 3.8vw, 44px)}
+    .subtitle{color:var(--muted); font-size: clamp(15px, 1.2vw, 18px)}
+    .cta{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 10px 14px; border-radius: 12px; border:1px solid transparent;
+      background: var(--primary); color:white; font-weight:600;
+      box-shadow: 0 4px 16px rgba(10,132,255,.35);
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .btn:hover{transform: translateY(-1px); text-decoration:none}
+    .btn.secondary{
+      background: transparent; color: var(--text);
+      border-color: color-mix(in srgb, var(--text) 16%, transparent);
+      box-shadow:none
+    }
+    .meta-list{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .chip{
+      font-size:12px; color: var(--muted); border:1px solid color-mix(in srgb, var(--text) 12%, transparent);
+      padding:6px 10px; border-radius:999px; background: color-mix(in srgb, var(--card) 80%, transparent)
+    }
+
+    /* ====== Sections ====== */
+    section{padding: 48px 0}
+    .section-title{
+      display:flex; align-items:center; gap:12px; margin-bottom:20px
+    }
+    .section-title .bar{width:8px; height:24px; border-radius:6px; background:linear-gradient(180deg,var(--primary),#5BBBFF)}
+    h2{margin:0; font-size: clamp(20px, 2.6vw, 28px)}
+    .lead{color:var(--muted); margin:6px 0 16px}
+
+    /* ====== Cards / grids ====== */
+    .grid{display:grid; gap:16px}
+    .grid.cols-2{grid-template-columns: repeat(2,1fr)}
+    .grid.cols-3{grid-template-columns: repeat(3,1fr)}
+    @media (max-width: 960px){ .hero{grid-template-columns:1fr} .grid.cols-3{grid-template-columns:1fr 1fr} }
+    @media (max-width: 720px){ .grid.cols-2, .grid.cols-3{grid-template-columns:1fr} }
+
+    .card{
+      background: var(--card);
+      border:1px solid color-mix(in srgb, var(--text) 10%, transparent);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 16px 38px rgba(0,0,0,.35);
+      border-color: color-mix(in srgb, var(--primary) 50%, transparent);
+    }
+    .card .row{display:flex; align-items:center; justify-content:space-between; gap:12px}
+    .pill{font-size:12px; color: var(--muted); border:1px solid color-mix(in srgb, var(--text) 14%, transparent);
+      padding:4px 8px; border-radius:999px}
+    .stack{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .stack .tag{
+      font-size:12px; color: var(--muted); background: color-mix(in srgb, var(--text) 8%, transparent);
+      padding:6px 8px; border-radius:8px; border:1px dashed color-mix(in srgb, var(--text) 12%, transparent)
+    }
+    .item-title{margin:6px 0 6px; font-weight:600}
+    .item-desc{color:var(--muted); margin:0}
+
+    /* ====== About ====== */
+    .about-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:16px}
+    @media (max-width:960px){ .about-grid{grid-template-columns:1fr} }
+
+    /* ====== Timeline (Formation) ====== */
+    .timeline{position:relative; padding-left:22px}
+    .timeline::before{content:""; position:absolute; left:8px; top:4px; bottom:4px; width:2px; background: color-mix(in srgb, var(--text) 12%, transparent)}
+    .edu{position:relative; padding-left:10px; margin:10px 0}
+    .edu::before{content:""; position:absolute; left:-6px; top:.6em; width:10px; height:10px; border-radius:999px; background: var(--primary)}
+
+    /* ====== Contact ====== */
+    form{display:grid; gap:10px}
+    input, textarea{
+      width:100%; padding:12px 14px; border-radius:12px; border:1px solid color-mix(in srgb, var(--text) 16%, transparent);
+      background: color-mix(in srgb, var(--card) 92%, transparent); color: var(--text); outline:none;
+    }
+    input:focus, textarea:focus{box-shadow: var(--ring); border-color: var(--primary)}
+    textarea{min-height:140px; resize: vertical}
+    .contact-actions{display:flex; gap:10px; flex-wrap:wrap}
+    .icon-btn{
+      display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid color-mix(in srgb, var(--text) 16%, transparent);
+      background: transparent; color: var(--text); text-decoration:none;
+    }
+    .icon{width:18px; height:18px; display:inline-block}
+
+    /* ====== Footer ====== */
+    footer{padding:24px 0; color: var(--muted); border-top:1px solid color-mix(in srgb, var(--text) 10%, transparent); text-align:center}
+
+    /* ====== Reveal on scroll ====== */
+    .reveal{opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease}
+    .reveal.visible{opacity:1; transform: translateY(0)}
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .reveal{transition:none}
+      .btn{transition:none}
+      .card{transition:none}
+    }
+  </style>
+
+  <!-- JSON-LD Schema.org (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anis AHMED ZAID",
+    "jobTitle": "Ingénieur en Intelligence Artificielle",
+    "alumniOf": "ENSICAEN",
+    "knowsAbout": ["NLP","Vision","Automatisation","LLM","RAG","MLOps","Déploiement"],
+    "email": "mailto:anis.ahmed.zaid@example.com",
+    "url": "https://example.com",
+    "sameAs": ["https://www.linkedin.com/in/anis-ahmed-zaid"]
+  }
+  </script>
+</head>
+<body>
+  <!-- ====== Header / Nav ====== -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Anis AHMED ZAID</span>
+      </div>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#xp">Expériences & Projets</a></li>
+          <li><a href="#edu">Formation</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="btn secondary" href="Anis_AHMED_ZAID_CV.pdf" target="_blank" rel="noopener">Télécharger CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== Hero ====== -->
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="hero-card reveal">
+          <div class="avatar" aria-hidden="true">
+            <!-- Remplace par ta photo si tu veux -->
+            <img alt="Photo de profil d'Anis" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nODgnIGhlaWdodD0nODgnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHJhZGlhbEdyYWRpZW50IGlkPSdnJyBjeD0nNTAlJyBjeT0nNTAlJyByPSc3MCUnPjxzdG9wIG9mZnNldD0nMCUnIHN0b3AtY29sb3I9JyMwQTg0RkYnLz48c3RvcCBvZmZzZXQ9JzEwMCUnIHN0b3AtY29sb3I9JyM1QkJCRkYnLz48L3JhZGlhbEdyYWRpZW50PjxyZWN0IHdpZHRoPSc4OCcgaGVpZ2h0PSc4OCcgZmlsbD0ndXJsKCNnKScgcng9JzE2Jy8+PGNpcmNsZSBjeD0nNDQnIGN5PSczNScgcj0nMTUnIGZpbGw9J3doaXRlJyBvcGFjaXR5PScuOTUnLz48cmVjdCB4PScxMicgeT0nNTAnIHdpZHRoPSc2NCcgaGVpZ2h0PScyOCcgZmlsbD0nI2ZmZicgb3BhY2l0eT0nLjknIHJ4PScxMicvPjwvc3ZnPg==" />
+          </div>
+          <div>
+            <div class="kicker">Ingénierie · IA appliquée</div>
+            <h1>Ingénieur en Intelligence Artificielle</h1>
+            <p class="subtitle">NLP · Vision · Automatisation · LLM · RAG · Déploiement de solutions IA</p>
+            <div class="cta">
+              <a class="btn" href="#xp" title="Voir mes projets">
+                <!-- mini svg -->
+                <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                Voir mes projets
+              </a>
+              <a class="btn secondary" href="Anis_AHMED_ZAID_CV.pdf" target="_blank" rel="noopener" title="Ouvrir mon CV PDF">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14m0-14 4 4m-4-4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                Télécharger CV
+              </a>
+            </div>
+            <div class="meta-list" aria-label="Points clés">
+              <span class="chip">ENSICAEN</span>
+              <span class="chip">Python, FastAPI, Docker</span>
+              <span class="chip">LLM Orchestration</span>
+              <span class="chip">n8n · Bots Telegram</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="card">
+          <h3 class="item-title" style="margin-top:0">En bref</h3>
+          <p class="item-desc">Je conçois et déploie des solutions IA pragmatiques : chatbots RAG, automatisations robustes (scraping, n8n), et intégration de modèles (NLP/Vision) en production avec un focus performance, traçabilité et maintenance.</p>
+          <div class="stack">
+            <span class="tag">NLP</span><span class="tag">RAG</span><span class="tag">LLM</span>
+            <span class="tag">Computer Vision</span><span class="tag">MLOps</span>
+            <span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">PostgreSQL</span>
+            <span class="tag">n8n</span><span class="tag">Scraping</span><span class="tag">Telegram Bots</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== À propos ====== -->
+    <section id="about" class="reveal">
+      <div class="section-title">
+        <span class="bar" aria-hidden="true"></span><h2>À propos</h2>
+      </div>
+      <div class="about-grid">
+        <div class="card">
+          <p class="lead">Je suis <strong>Anis AHMED ZAID</strong>, ingénieur IA (ENSICAEN) spécialisé en <strong>NLP</strong>, <strong>LLM/RAG</strong> et <strong>automatisation</strong>. J’aide les équipes à passer du POC au <em>production-ready</em> : API propres, observabilité, sécurité des secrets, et exécution fiable.</p>
+          <div class="grid cols-2" style="margin-top:10px">
+            <div>
+              <h3 class="item-title">Compétences clés</h3>
+              <ul style="margin:6px 0 0 18px">
+                <li>NLP & RAG (retrieval, ranking, évaluation)</li>
+                <li>Orchestration LLM, context injection, tools</li>
+                <li>Automatisation : scraping, n8n, bots</li>
+                <li>APIs & backend (Python, FastAPI)</li>
+                <li>Déploiement (Docker) & CI simple</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="item-title">Langues</h3>
+              <ul style="margin:6px 0 0 18px">
+                <li>Français (courant)</li>
+                <li>Anglais (professionnel)</li>
+                <li>Arabe (courant)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3 class="item-title">Coordonnées</h3>
+            <p class="item-desc">Disponible pour CDI / missions.</p>
+            <div class="stack">
+              <a class="icon-btn" href="mailto:anis.ahmed.zaid@example.com">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2"/></svg>
+                anis.ahmed.zaid@example.com
+              </a>
+              <a class="icon-btn" href="https://www.linkedin.com/in/anis-ahmed-zaid" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 10v6M8 8v.01M12 16v-3a2 2 0 1 1 4 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="item-title">Disponibilité</h3>
+            <p class="item-desc">À partir de septembre 2025 · France / Remote</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Expériences & Projets ====== -->
+    <section id="xp" class="reveal">
+      <div class="section-title">
+        <span class="bar" aria-hidden="true"></span><h2>Expériences & Projets</h2>
+      </div>
+      <div class="grid cols-2">
+        <!-- ALTEN Rennes -->
+        <article class="card">
+          <div class="row">
+            <div>
+              <div class="pill">2025 · Rennes</div>
+              <h3 class="item-title">Ingénieur IA (Stage) — ALTEN Rennes · DIN</h3>
+            </div>
+            <div class="pill">Entreprise</div>
+          </div>
+          <p class="item-desc">
+            Orchestration de <strong>LLMs</strong> pour le projet <em>SAS Access</em> :
+            chaîne Graph Reasoning → Fusion → Resolver → Dialog Manager.
+            Mise en place d’un <strong>RAG</strong> robuste et traçable, évaluation et instrumentation.
+          </p>
+          <div class="stack">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LLM Orchestration</span>
+            <span class="tag">RAG</span><span class="tag">Evaluation</span><span class="tag">Docker</span>
+          </div>
+        </article>
+
+        <!-- Freelance Automation -->
+        <article class="card">
+          <div class="row">
+            <div>
+              <div class="pill">2023–2025 · Remote</div>
+              <h3 class="item-title">Développeur Automatisation — Freelance</h3>
+            </div>
+            <div class="pill">Indépendant</div>
+          </div>
+          <p class="item-desc">
+            Conception d’agents/bots (Telegram), scrapers fiables et workflows <strong>n8n</strong>.
+            Intégration IA (NLP/Vision), APIs métiers et déploiement <strong>Docker</strong>.
+          </p>
+          <div class="stack">
+            <span class="tag">n8n</span><span class="tag">Scraping</span><span class="tag">Telegram Bots</span>
+            <span class="tag">PostgreSQL</span><span class="tag">Observabilité</span>
+          </div>
+        </article>
+
+        <!-- RAG Chatbot -->
+        <article class="card">
+          <div class="row">
+            <div>
+              <div class="pill">Projet</div>
+              <h3 class="item-title">Chatbot RAG avec mémoire longue</h3>
+            </div>
+            <div class="pill">Open-source (perso)</div>
+          </div>
+          <p class="item-desc">
+            Assistant conversationnel avec <strong>RAG</strong>, gestion de contexte, scoring de passages,
+            et policies out-of-context. Évaluation qualitative & garde-fous (guardrails).
+          </p>
+          <div class="stack">
+            <span class="tag">RAG</span><span class="tag">Vector DB</span><span class="tag">Embeddings</span>
+            <span class="tag">Toolformer-like</span><span class="tag">Eval</span>
+          </div>
+        </article>
+
+        <!-- Trading Bot -->
+        <article class="card">
+          <div class="row">
+            <div>
+              <div class="pill">Projet</div>
+              <h3 class="item-title">Bot de trading (grid) — KuCoin</h3>
+            </div>
+            <div class="pill">Perso</div>
+          </div>
+          <p class="item-desc">
+            MVP d’un bot <strong>grid</strong> sur actifs volatils : backtests, gestion du risque,
+            alertes et tableaux de bord simplifiés.
+          </p>
+          <div class="stack">
+            <span class="tag">Python</span><span class="tag">API Exchange</span><span class="tag">Backtesting</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ====== Formation ====== -->
+    <section id="edu" class="reveal">
+      <div class="section-title">
+        <span class="bar" aria-hidden="true"></span><h2>Formation</h2>
+      </div>
+      <div class="card">
+        <div class="timeline">
+          <div class="edu">
+            <h3 class="item-title">ENSICAEN — Diplôme d’ingénieur en Intelligence Artificielle</h3>
+            <p class="item-desc">2023–2025</p>
+          </div>
+          <div class="edu">
+            <h3 class="item-title">Projets académiques — NLP & Vision</h3>
+            <p class="item-desc">Modélisation, évaluation & industrialisation légère (API/containers).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Contact ====== -->
+    <section id="contact" class="reveal">
+      <div class="section-title">
+        <span class="bar" aria-hidden="true"></span><h2>Contact</h2>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <form id="contact-form" autocomplete="on">
+            <!-- Astuce: le formulaire ouvre un mailto avec un corps pré-rempli (aucun backend requis) -->
+            <div class="grid cols-2">
+              <div>
+                <label for="name">Nom</label>
+                <input id="name" name="name" type="text" placeholder="Votre nom" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="votre@email.com" required />
+              </div>
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Bonjour Anis, je souhaite..." required></textarea>
+            </div>
+            <div class="contact-actions">
+              <button class="btn" type="submit">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="m3 7 9 6 9-6M5 6h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2"/></svg>
+                Envoyer
+              </button>
+              <a class="icon-btn" href="mailto:anis.ahmed.zaid@example.com">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2"/></svg>
+                Email direct
+              </a>
+              <a class="icon-btn" href="https://www.linkedin.com/in/anis-ahmed-zaid" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 10v6M8 8v.01M12 16v-3a2 2 0 1 1 4 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                LinkedIn
+              </a>
+              <a class="icon-btn" href="Anis_AHMED_ZAID_CV.pdf" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 5v14m0-14 4 4m-4-4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                Télécharger CV
+              </a>
+            </div>
+          </form>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3 class="item-title">Pourquoi me contacter ?</h3>
+            <ul style="margin:6px 0 0 18px">
+              <li>Passage POC → Prod (RAG/LLM) avec garde-fous</li>
+              <li>Automatisations fiables (scraping, n8n, bots)</li>
+              <li>APIs propres, monitoring simple et coûts maîtrisés</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3 class="item-title">Télécharger mon CV</h3>
+            <p class="item-desc">PDF à jour : expériences, projets, compétences.</p>
+            <p style="margin:8px 0 0"><a class="btn secondary" href="Anis_AHMED_ZAID_CV.pdf" target="_blank" rel="noopener">Ouvrir le PDF</a></p>
+            <!-- Remarque: remplace le href par le chemin réel de ton PDF -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== Footer ====== -->
+  <footer>
+    © <span id="year"></span> Anis AHMED ZAID — Tous droits réservés.
+  </footer>
+
+  <script>
+    // ====== Utilitaires ======
+    const $ = (s, r=document) => r.querySelector(s);
+
+    // Année courante
+    $('#year').textContent = new Date().getFullYear();
+
+    // ====== Reveal on scroll (IntersectionObserver) ======
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, {rootMargin: '0px 0px -10% 0px', threshold: .08});
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ====== Form submit via mailto (pas de backend requis) ======
+    $('#contact-form').addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      const name = $('#name').value.trim();
+      const email = $('#email').value.trim();
+      const message = $('#message').value.trim();
+
+      if(!name || !email || !message){
+        alert('Merci de compléter tous les champs.');
+        return;
+      }
+      const subject = encodeURIComponent(`Contact portfolio — ${name}`);
+      const body = encodeURIComponent(
+        `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n— Envoyé depuis le portfolio`
+      );
+      // Remplace l’adresse ci-dessous par ton email professionnel si nécessaire
+      window.location.href = `mailto:anis.ahmed.zaid@example.com?subject=${subject}&body=${body}`;
+    });
+
+    // ====== Petite amélioration d’accessibilité: focus visible sur TAB ======
+    function handleFirstTab(e){
+      if(e.key === 'Tab'){
+        document.body.classList.add('user-is-tabbing');
+        window.removeEventListener('keydown', handleFirstTab);
+      }
+    }
+    window.addEventListener('keydown', handleFirstTab);
+
+    // ====== Exemples: comment ajouter rapidement une nouvelle expérience ======
+    // Duplique simplement un <article class="card"> dans #xp, adapte .pill (date/lieu),
+    // .item-title (poste), .item-desc (rôle/impact) et les <span class="tag"> (stack).
+  </script>
+</body>
+</html>

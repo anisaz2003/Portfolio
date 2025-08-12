@@ -3,475 +3,385 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Anis AHMED ZAID · Ingénieur en Intelligence Artificielle</title>
-  <meta name="description" content="Portfolio d'Anis AHMED ZAID – Ingénieur en IA (NLP, Vision, Automatisation, LLM, RAG, déploiement). Projets, expériences, compétences, et CV téléchargeable." />
-  <meta name="keywords" content="Anis Ahmed Zaid, Ingénieur IA, NLP, Vision, LLM, RAG, Automatisation, n8n, OpenAI, Docker, Portfolio" />
-  <meta name="author" content="Anis AHMED ZAID" />
+  <meta name="description" content="Ingénieur en Intelligence Artificielle (NLP, vision, automatisation, agents IA) — portfolio d’Anis AHMED ZAID : profil, expériences, compétences, formation et contact." />
   <meta name="theme-color" content="#0A84FF" />
-  <meta property="og:title" content="Anis AHMED ZAID · Ingénieur en Intelligence Artificielle" />
-  <meta property="og:description" content="NLP · Vision · Automatisation · LLM · RAG · Déploiement. Découvrez mes projets et téléchargez mon CV." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="fr_FR" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkfKcA3e6l5OGucs5cjox96D65V+1enRAj6uC2YyYjX1B+XHqvZ8CB7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Anis AHMED ZAID · Ingénieur IA — Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%230A84FF'/%3E%3Cstop stop-color='%2300C2FF' offset='.7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect rx='14' ry='14' width='64' height='64' fill='url(%23g)'/%3E%3Ctext x='50%' y='52%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial' font-size='28' fill='white'%3EAZ%3C/text%3E%3C/svg%3E" />
   <style>
     :root{
-      --bg:#0B0E14; /* profond mais lisible */
-      --card:#121722;
-      --elev:#0E1420;
-      --text:#E8EEF8;
-      --muted:#9FB0C6;
-      --line:#1E2A3A;
-      --accent:#0A84FF;
-      --accent-2:#6EA8FF;
-      --ok:#2ECC71;
-      --warn:#FFB020;
+      --bg: #0b0c10;      --surface: #101218;  --muted:#7b8aa0;
+      --text:#e8eef9;     --brand:#0A84FF;    --brand-2:#00C2FF;
+      --card:#0f121a;     --ring: rgba(10,132,255,.25);
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#0b1220 40%, #0a0f1a 100%);color:var(--text);line-height:1.6}
-    a{color:var(--accent);text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{width:min(1120px,92%);margin-inline:auto}
+    html,body{height:100%}
+    body{
+      margin:0; color:var(--text); background:radial-gradient(1200px 600px at 10% -10%, rgba(0,194,255,.12), transparent 60%),radial-gradient(1000px 800px at 110% -20%, rgba(10,132,255,.14), transparent 60%), var(--bg);
+      font: 15px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      letter-spacing:.2px;
+    }
+    a{color:inherit}
+    .container{max-width:1100px; margin:0 auto; padding:24px}
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(14px); background:rgba(16,18,24,.6); border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex; align-items:center; gap:18px; padding:10px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700}
+    .brand .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:0 0 0 6px var(--ring)}
+    nav ul{display:flex; gap:14px; list-style:none; margin:0; padding:0}
+    nav a{display:block; padding:8px 10px; border-radius:10px; text-decoration:none; color:#dfe7f7}
+    nav a:hover, nav a[aria-current="page"]{background:rgba(255,255,255,.06)}
 
-    /* Header */
-    header{position:sticky;top:0;z-index:1000;background:rgba(10,14,22,.7);backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
-    .brand{display:flex;align-items:center;gap:.75rem;font-weight:700}
-    .logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#4f46e5);display:grid;place-items:center;color:white;font-family:Poppins,sans-serif}
-    nav ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0}
-    nav a{color:var(--text);opacity:.9;padding:.5rem .75rem;border-radius:10px}
-    nav a:hover, nav a.active{background:rgba(255,255,255,.06)}
-    .menu-btn{display:none;border:1px solid var(--line);background:transparent;color:var(--text);padding:.5rem .75rem;border-radius:10px}
+    .hero{display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:center; padding:42px 0}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.07); border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .hero .card{padding:26px}
+    .kicker{color:var(--muted); text-transform:uppercase; letter-spacing:.25em; font-size:12px}
+    h1{font-size:38px; margin:6px 0 6px}
+    .subtitle{font-size:18px; color:#cdd7ee; margin:0 0 14px}
+    .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:14px}
+    .btn{--b:var(--brand); background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#02122a; font-weight:700; text-decoration:none; padding:12px 16px; border-radius:12px; border:none; cursor:pointer}
+    .btn.ghost{background:transparent; color:#e6f0ff; border:1px solid rgba(255,255,255,.18)}
+    .meta{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px; color:#c7d4ef}
+    .meta div{display:flex; gap:10px; align-items:center}
+    .avatar{width:120px; height:120px; border-radius:22px; background:radial-gradient(60px 60px at 30% 30%, #2b7cff, #0b2a4f); display:grid; place-items:center; font-size:40px; font-weight:800; letter-spacing:.05em; box-shadow:inset 0 0 60px rgba(255,255,255,.08), 0 10px 30px rgba(0,0,0,.5)}
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:rgba(10,132,255,.12); border:1px solid rgba(10,132,255,.25); color:#d8e9ff; font-weight:600; font-size:12px}
 
-    /* Hero */
-    #home{padding:5.5rem 0 3rem}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}
-    .kicker{font-size:.9rem;color:var(--accent-2);letter-spacing:.08em;text-transform:uppercase;font-weight:700}
-    .title{font-family:Poppins,Inter,sans-serif;font-size:clamp(1.8rem,3.2vw,3rem);line-height:1.15;margin:.5rem 0 1rem}
-    .grad{background:linear-gradient(90deg,#dbeafe, #93c5fd 30%, #60a5fa 60%, #2563eb);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .lead{color:var(--muted);font-size:1.05rem}
-    .cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem}
-    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.8rem 1rem;border-radius:12px;border:1px solid var(--line);background:linear-gradient(180deg,var(--elev),#0a1220);color:var(--text);font-weight:600}
-    .btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(10,132,255,.15)}
-    .btn.primary{background:linear-gradient(180deg,#0a84ff,#2563eb);border-color:#1f4fd1}
+    section{scroll-margin-top:90px; margin:32px 0}
+    section h2{font-size:22px; margin:0 0 14px}
+    .grid{display:grid; gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
 
-    .avatar{justify-self:end;position:relative;}
-    .avatar .card{background:radial-gradient(120% 120% at 20% 10%, #0f1b2d 0, #0a0f1a 60%);border:1px solid var(--line);border-radius:18px;padding:1.2rem;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
-    .avatar .id{display:grid;place-items:center;border-radius:14px;height:240px;background:conic-gradient(from 180deg at 60% 40%, #0a84ff22 0 25%, transparent 0 100%), radial-gradient(80% 80% at 50% 50%, #0b1530 0,#0a0f1a 70%);border:1px dashed #1e2a3a}
-    .avatar .id .circle{width:104px;height:104px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#1f3a8a,#60a5fa);font:700 36px Poppins,sans-serif;color:#fff}
-    .quick{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:.8rem}
-    .chip{border:1px solid var(--line);border-radius:10px;padding:.4rem .6rem;color:var(--muted);font-size:.85rem;text-align:center}
+    .skills{display:flex; flex-wrap:wrap; gap:10px}
+    .chip{padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08)}
 
-    /* Sections */
-    section{padding:3.5rem 0;border-top:1px solid var(--line)}
-    .section-title{font:700 1.4rem Poppins,Inter,sans-serif;margin:0 0 1.5rem}
-    .grid{display:grid;gap:1rem}
+    .timeline{display:grid; gap:12px}
+    .item{padding:16px; border-radius:16px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06)}
+    .item .top{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between}
+    .item .role{font-weight:700}
+    .item .when{color:var(--muted); font-size:13px}
+    .item .where{color:#cfe0ff}
+    .item .tech{margin-top:6px; color:#bcd0f5; font-size:13px}
 
-    /* About */
-    .badges{display:flex;flex-wrap:wrap;gap:.5rem}
-    .badge{padding:.45rem .65rem;border-radius:999px;border:1px solid var(--line);background:linear-gradient(180deg,var(--elev),#0a1220);font-size:.9rem}
-    .two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:1.2rem}
-    .lang{display:grid;gap:.6rem}
-    .meter{height:10px;border-radius:999px;background:#0a1020;border:1px solid var(--line);overflow:hidden}
-    .meter > span{display:block;height:100%;background:linear-gradient(90deg,#60a5fa,#2563eb)}
-    .list{display:grid;gap:.5rem;color:var(--muted)}
+    .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .cards .card{padding:16px}
 
-    /* Experience / Projects */
-    .timeline{position:relative;padding-left:1.2rem}
-    .timeline:before{content:"";position:absolute;left:6px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#204266,#1b2a42)}
-    .xp{position:relative;background:linear-gradient(180deg,var(--elev),#0a1220);border:1px solid var(--line);border-radius:14px;padding:1rem;margin-bottom:1rem}
-    .xp:before{content:"";position:absolute;left:-.6rem;top:1.1rem;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 2px #0b1020}
-    .xp h4{margin:.1rem 0 .2rem;font:600 1.05rem Poppins,Inter,sans-serif}
-    .xp .meta{color:var(--muted);font-size:.92rem;margin-bottom:.5rem}
-    .tags{display:flex;flex-wrap:wrap;gap:.4rem}
-    .tag{font-size:.8rem;border:1px solid var(--line);padding:.25rem .5rem;border-radius:999px;color:#cfe0ff}
+    .lang-list{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
+    .lang-list .card{padding:14px}
 
-    .cards{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
-    .card{background:linear-gradient(180deg,var(--elev),#0a1220);border:1px solid var(--line);border-radius:14px;padding:1rem;transition:transform .2s ease, box-shadow .2s ease}
-    .card:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,99,235,.18)}
-    .card h5{margin:.4rem 0 .3rem;font:600 1rem Poppins,Inter,sans-serif}
-    .card p{color:var(--muted);font-size:.95rem}
-
-    /* Education */
-    .edu{display:grid;gap:.8rem}
-    .edu .item{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:.9rem;background:linear-gradient(180deg,var(--elev),#0a1220)}
-    .edu .title{font-weight:600}
-
-    /* Contact */
-    form{display:grid;gap:.7rem}
-    input, textarea{width:100%;padding:.8rem;border-radius:12px;border:1px solid var(--line);background:#0b1220;color:var(--text)}
+    .contact{display:grid; grid-template-columns:1.1fr .9fr; gap:16px}
+    form .row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    label{display:block; font-weight:600; margin:8px 0 6px}
+    input, textarea{width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.03); color:var(--text)}
     textarea{min-height:120px}
-    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem}
-    .contact-card{border:1px solid var(--line);border-radius:14px;padding:1rem;background:linear-gradient(180deg,var(--elev),#0a1220)}
 
-    /* Footer */
-    footer{padding:2rem 0;color:var(--muted);border-top:1px solid var(--line)}
-    .footgrid{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center}
-    .socials{display:flex;gap:.7rem}
+    footer{margin-top:26px; padding:24px 0; color:#9fb3d8; border-top:1px solid rgba(255,255,255,.08)}
 
-    /* Reveal on scroll */
-    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
-    .reveal.visible{opacity:1;transform:none}
+    .muted{color:var(--muted)}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
 
-    /* To top */
-    #toTop{position:fixed;right:1rem;bottom:1rem;border:none;border-radius:999px;padding:.75rem;display:grid;place-items:center;background:linear-gradient(180deg,#16233a,#0a1220);border:1px solid var(--line);color:#fff;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s ease, transform .2s ease;z-index:999}
-    #toTop.show{opacity:1;pointer-events:auto}
-    #toTop:hover{transform:translateY(-2px)}
-
-    /* Responsive */
     @media (max-width: 900px){
-      .hero, .two-col, .contact-grid{grid-template-columns:1fr}
-      .avatar{justify-self:start}
-      nav ul{display:none}
-      .menu-btn{display:inline-flex}
+      .hero{grid-template-columns:1fr;}
+      .meta{grid-template-columns:1fr}
+      .grid.cols-3{grid-template-columns:1fr}
+      .grid.cols-2{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      form .row{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
-  <a href="#home" class="visually-hidden">Aller au contenu</a>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">AZ</div>
-        <span>Anis AHMED ZAID</span>
+<a class="sr-only" href="#main">Aller au contenu</a>
+<header>
+  <div class="container nav">
+    <div class="brand"><span class="dot" aria-hidden="true"></span> <span>Anis AHMED ZAID</span></div>
+    <nav aria-label="Navigation principale" style="margin-left:auto">
+      <ul>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#xp">Expériences</a></li>
+        <li><a href="#edu">Formation</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main" class="container">
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="card">
+      <div class="kicker">Ingénieur en Intelligence Artificielle</div>
+      <h1>Construire des systèmes IA utiles et fiables</h1>
+      <p class="subtitle">Spécialisé en NLP, vision par ordinateur et automatisation. Expérience en agents IA (LLM + RAG) et déploiement en production.</p>
+      <div class="cta">
+        <a class="btn" href="#contact">Me contacter</a>
+        <a class="btn ghost" href="CVAnisAHMEDZAID2025 - V1.pdf" download>📄 Télécharger le CV</a>
       </div>
-      <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu"><i class="fa-solid fa-bars"></i></button>
-      <nav id="mainNav" aria-label="Navigation principale">
-        <ul>
-          <li><a href="#home" class="active">Accueil</a></li>
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#experience">Expériences</a></li>
-          <li><a href="#education">Formation</a></li>
-          <li><a href="#projects">Projets</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <div class="meta">
+        <div>📧 <a href="mailto:anisahmedzaid@gmail.com">anisahmedzaid@gmail.com</a></div>
+        <div>📞 <a href="tel:+33652640258">+33 6 52 64 02 58</a></div>
+        <div>🔗 <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/anis-ahmed-zaid-48179b254/">LinkedIn</a></div>
+        <div>🚗 Permis B</div>
+      </div>
     </div>
-  </header>
+    <div class="card" style="display:grid; place-items:center; text-align:center; gap:14px">
+      <div class="avatar" aria-hidden="true">AZ</div>
+      <div class="badge">Disponible pour de nouveaux projets</div>
+      <p class="muted" style="max-width:36ch">Piano (3 ans) · Échecs (4 ans) · Musculation (1 an)</p>
+    </div>
+  </section>
 
-  <main>
-    <!-- Hero -->
-    <section id="home" class="container">
-      <div class="hero">
-        <div class="copy reveal">
-          <div class="kicker">Ingénieur en Intelligence Artificielle</div>
-          <h1 class="title">Je conçois des <span class="grad">solutions IA utiles</span> — de l'idée au déploiement (LLM, RAG, agents, automatisation).</h1>
-          <p class="lead">Spécialisé en NLP, vision, automatisation et intégration produit. J'aide les équipes à livrer vite et bien : prototypes en quelques jours, industrialisation propre, et suivi mesurable.</p>
-          <div class="cta">
-            <a class="btn primary" href="CVAnisAHMEDZAID2025%20-%20V1.pdf" target="_blank" rel="noopener" download title="Télécharger le CV"><i class="fa-solid fa-file-arrow-down"></i> Télécharger mon CV</a>
-            <a class="btn" href="#contact"><i class="fa-regular fa-paper-plane"></i> Me contacter</a>
-          </div>
-        </div>
-        <div class="avatar reveal">
-          <div class="card">
-            <div class="id">
-              <div class="circle" aria-hidden="true">AZ</div>
-            </div>
-            <div class="quick">
-              <div class="chip"><i class="fa-solid fa-language"></i> FR C2</div>
-              <div class="chip"><i class="fa-solid fa-language"></i> EN C1</div>
-              <div class="chip"><i class="fa-solid fa-language"></i> AR B2</div>
-            </div>
-          </div>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>À propos</h2>
+    <div class="cards">
+      <div class="card">
+        <p>Ingénieur en IA avec une appétence forte pour les problèmes concrets d’automatisation et d’agentique : collecte/structuration de données, RAG, orchestrations multi‑outils et mise en production. J’aime transformer une idée en un prototype fonctionnel rapide, puis l’industrialiser proprement.</p>
+      </div>
+      <div class="card">
+        <strong>Forces</strong>
+        <ul>
+          <li>Prototypage rapide (LLM, RAG, intégrations n8n)</li>
+          <li>Qualité logicielle (Git, Docker) & déploiement</li>
+          <li>Pédagogie et documentation claire</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Ce que je recherche</strong>
+        <ul>
+          <li>Projets IA appliqués (NLP, vision, agents)</li>
+          <li>Automatisations robustes (n8n, APIs)</li>
+          <li>Produits data‑driven à impact</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Compétences</h2>
+    <div class="grid cols-3">
+      <div class="card">
+        <strong>Langages</strong>
+        <div class="skills">
+          <span class="chip">Python</span>
+          <span class="chip">C</span>
+          <span class="chip">C++</span>
         </div>
       </div>
-    </section>
-
-    <!-- About -->
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title">À propos</h2>
-        <div class="two-col">
-          <div class="reveal">
-            <p>Ingénieur en IA formé à l’ENSICAEN, je travaille sur des systèmes à base de <strong>grands modèles de langage</strong> (LLM), de <strong>RAG</strong> et d’<strong>agents</strong>, ainsi que sur des projets en <strong>vision par ordinateur</strong> et <strong>NLP</strong>. Mon approche est orientée produit : comprendre l’objectif métier, livrer rapidement un MVP fiable, puis industrialiser proprement.</p>
-            <h3>Compétences clés</h3>
-            <div class="badges" aria-label="Compétences">
-              <span class="badge">Python</span>
-              <span class="badge">C / C++</span>
-              <span class="badge">Git</span>
-              <span class="badge">n8n</span>
-              <span class="badge">Docker</span>
-              <span class="badge">Pandas</span>
-              <span class="badge">NumPy</span>
-              <span class="badge">scikit-learn</span>
-              <span class="badge">PyTorch</span>
-              <span class="badge">TensorFlow</span>
-              <span class="badge">OpenAI API</span>
-              <span class="badge">LangChain</span>
-              <span class="badge">CLIP</span>
-            </div>
-
-            <h3 style="margin-top:1rem">Centres d’intérêt</h3>
-            <ul class="list">
-              <li>🎹 Piano – 3 ans (club ENSICAEN)</li>
-              <li>♟️ Échecs – 4 ans (tournois non officiels)</li>
-              <li>🏋️ Musculation – 1 an (entraînement & nutrition autonomes)</li>
-            </ul>
-          </div>
-
-          <div class="reveal">
-            <h3>Langues</h3>
-            <div class="lang">
-              <div>
-                <div style="display:flex;justify-content:space-between"><span>Français</span><span>C2</span></div>
-                <div class="meter" aria-label="Français niveau C2"><span style="width:100%"></span></div>
-              </div>
-              <div>
-                <div style="display:flex;justify-content:space-between"><span>Anglais</span><span>C1</span></div>
-                <div class="meter" aria-label="Anglais niveau C1"><span style="width:85%"></span></div>
-              </div>
-              <div>
-                <div style="display:flex;justify-content:space-between"><span>Arabe</span><span>B2</span></div>
-                <div class="meter" aria-label="Arabe niveau B2"><span style="width:70%"></span></div>
-              </div>
-            </div>
-
-            <h3 style="margin-top:1rem">Coordonnées</h3>
-            <ul class="list">
-              <li><i class="fa-solid fa-envelope"></i> <a href="mailto:anisahmedzaid@gmail.com">anisahmedzaid@gmail.com</a></li>
-              <li><i class="fa-solid fa-phone"></i> <a href="tel:+33652640258">+33 6 52 64 02 58</a></li>
-              <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/anis-ahmed-zaid-48179b254" target="_blank" rel="noopener">LinkedIn</a></li>
-            </ul>
-          </div>
+      <div class="card">
+        <strong>Outils</strong>
+        <div class="skills">
+          <span class="chip">Git</span>
+          <span class="chip">Docker</span>
+          <span class="chip">n8n</span>
+          <span class="chip">GCP</span>
         </div>
       </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience">
-      <div class="container">
-        <h2 class="section-title">Expériences</h2>
-        <div class="timeline">
-          <article class="xp reveal">
-            <h4>Ingénieur IA – Automatisation & Agents</h4>
-            <div class="meta">AZ Formation · Août 2025 — présent · Remote</div>
-            <p>Conception de workflows automatisés, de chatbots Telegram/WhatsApp et d’agents IA téléphoniques.</p>
-            <div class="tags">
-              <span class="tag">n8n</span><span class="tag">OpenAI API</span><span class="tag">RAG</span><span class="tag">ElevenLabs</span>
-            </div>
-          </article>
-
-          <article class="xp reveal">
-            <h4>Stage – NLP / IA agentic</h4>
-            <div class="meta">ALTEN Labs Rennes (DIN) · Fév 2025 — Août 2025</div>
-            <p>Adaptation et déploiement d’un système de <em>pilotage d’agents</em> en langage naturel basé sur des LLM, avec industrialisation et packaging.</p>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">OpenAI</span><span class="tag">Ollama</span><span class="tag">Docker</span>
-            </div>
-          </article>
-
-          <article class="xp reveal">
-            <h4>Projet – IA Embeddings</h4>
-            <div class="meta">Musée de Bayeux & GREYC · Oct 2024 — Jan 2025 · Caen</div>
-            <p>Outils de recherche sur la <strong>Tapisserie de Bayeux</strong> par texte et par images.</p>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">OpenAI CLIP</span>
-            </div>
-          </article>
-
-          <article class="xp reveal">
-            <h4>Hackathon – Chatbot Assistant CB</h4>
-            <div class="meta">19 LCL Paris · Sep 2024 · 3ᵉ place</div>
-            <p>Développement, en 26h, d’un assistant expert cartes bancaires LCL sur GCP.</p>
-            <div class="tags">
-              <span class="tag">Gemini</span><span class="tag">GCP</span><span class="tag">LangChain</span><span class="tag">Python</span>
-            </div>
-          </article>
-
-          <article class="xp reveal">
-            <h4>Stage – ML & Radiothérapie</h4>
-            <div class="meta">Hôpital C. Mahmoudi (Tizi-Ouzou) · Mai 2024 — Août 2024</div>
-            <p>Modèles ML pour assister les physiciens médicaux en radiothérapie.</p>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">Keras</span><span class="tag">pydicom</span><span class="tag">scikit-learn</span><span class="tag">Pandas</span>
-            </div>
-          </article>
+      <div class="card">
+        <strong>Librairies / Frameworks</strong>
+        <div class="skills">
+          <span class="chip">Pandas</span>
+          <span class="chip">NumPy</span>
+          <span class="chip">scikit‑learn</span>
+          <span class="chip">PyTorch</span>
+          <span class="chip">TensorFlow</span>
+          <span class="chip">Keras</span>
+          <span class="chip">LangChain</span>
+          <span class="chip">OpenAI</span>
+          <span class="chip">Ollama</span>
+          <span class="chip">OpenAI CLIP</span>
+          <span class="chip">Pydicom</span>
+          <span class="chip">RAG</span>
+          <span class="chip">ElevenLabs</span>
+          <span class="chip">Gemini</span>
         </div>
       </div>
-    </section>
+    </div>
+    <div style="margin-top:10px" class="muted">Langues : Français (C2) · Anglais (C1) · Arabe (B2)</div>
+  </section>
 
-    <!-- Education -->
-    <section id="education">
-      <div class="container">
-        <h2 class="section-title">Formation</h2>
-        <div class="edu reveal">
-          <div class="item">
-            <div>
-              <div class="title">École d’Ingénieurs ENSICAEN — Spécialité IA, Image & Son</div>
-              <div>Caen, France</div>
-            </div>
-            <div>2022 — 2025</div>
+  <!-- EXPERIENCE -->
+  <section id="xp">
+    <h2>Expériences</h2>
+    <div class="timeline">
+      <article class="item">
+        <div class="top">
+          <div>
+            <div class="role">Automatisation & agents IA — AZ Formation</div>
+            <div class="where">Workflows automatisés, chatbots Telegram/WhatsApp, agents IA téléphoniques</div>
           </div>
-          <div class="item">
-            <div>
-              <div class="title">CPGE Lycée Pothier — MPSI / PSI</div>
-              <div>Orléans, France</div>
-            </div>
-            <div>2020 — 2022</div>
+          <div class="when">Août 2025</div>
+        </div>
+        <p>Conception d’automatisations et d’assistants IA orientés business (RAG + orchestrations) avec intégrations voix.</p>
+        <div class="tech">Tech : n8n, OpenAI API, RAG, ElevenLabs</div>
+      </article>
+      <article class="item">
+        <div class="top">
+          <div>
+            <div class="role">NLP / Agentique IA — ALTEN Labs Rennes (DIN)</div>
+            <div class="where">Système de pilotage d’agents en langage naturel</div>
+          </div>
+          <div class="when">Fév 2025 – Août 2025</div>
+        </div>
+        <p>Adaptation et déploiement d’un système agentique basé LLM (outillage, orchestrations, conteneurisation).</p>
+        <div class="tech">Tech : Python, OpenAI, Ollama, Docker</div>
+      </article>
+      <article class="item">
+        <div class="top">
+          <div>
+            <div class="role">IA Embeddings — Musée de Bayeux & GREYC</div>
+            <div class="where">Recherche d’images/texte sur la Tapisserie de Bayeux</div>
+          </div>
+          <div class="when">Oct 2024 – Jan 2025</div>
+        </div>
+        <p>Développement d’outils de recherche sémantique multimodale (texte → image, image → image).</p>
+        <div class="tech">Tech : Python, OpenAI CLIP</div>
+      </article>
+      <article class="item">
+        <div class="top">
+          <div>
+            <div class="role">ML & Radiothérapie — Hôpital C. Mahmoudi (DZ)</div>
+            <div class="where">Assistance aux physiciens médicaux</div>
+          </div>
+          <div class="when">Mai 2024 – Août 2024</div>
+        </div>
+        <p>Modèle d’aide à la décision en radiothérapie, data‑prep DICOM et pipeline d’entraînement.</p>
+        <div class="tech">Tech : Python, Keras, Pydicom, scikit‑learn, Pandas</div>
+      </article>
+      <article class="item">
+        <div class="top">
+          <div>
+            <div class="role">Hackathon — Chatbot CB (LCL Paris)</div>
+            <div class="where">3ᵉ place — assistant cartes bancaires</div>
+          </div>
+          <div class="when">Sep 2024</div>
+        </div>
+        <p>Conception en 26h d’un chatbot expert cartes bancaires avec outils GCP.</p>
+        <div class="tech">Tech : Gemini, GCP, LangChain, Python</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="edu">
+    <h2>Formation</h2>
+    <div class="grid cols-2">
+      <div class="card">
+        <strong>École d’ingénieurs ENSICAEN</strong>
+        <div class="muted">2022 – 2025 · Caen, France</div>
+        <div>Spécialité : IA, Image & Son</div>
+      </div>
+      <div class="card">
+        <strong>CPGE Lycée Pothier</strong>
+        <div class="muted">2020 – 2022 · Orléans, France</div>
+        <div>Filière : MPSI → PSI</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANGUAGES (spoken) -->
+  <section aria-label="Langues parlées">
+    <div class="lang-list">
+      <div class="card"><strong>Français</strong><div class="muted">Courant · C2</div></div>
+      <div class="card"><strong>Anglais</strong><div class="muted">Professionnel · C1</div></div>
+      <div class="card"><strong>Arabe</strong><div class="muted">Intermédiaire · B2</div></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <div class="card">
+        <p>Un projet, une idée à prototyper ou un besoin d’automatisation&nbsp;? Écrivez‑moi, je réponds rapidement.</p>
+        <ul>
+          <li>✉️ Email : <a href="mailto:anisahmedzaid@gmail.com">anisahmedzaid@gmail.com</a></li>
+          <li>📱 Téléphone : <a href="tel:+33652640258">+33 6 52 64 02 58</a></li>
+          <li>💼 LinkedIn : <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/anis-ahmed-zaid-48179b254/">/in/anis-ahmed-zaid-48179b254</a></li>
+        </ul>
+      </div>
+      <form class="card" id="contactForm" aria-label="Formulaire de contact">
+        <div class="row">
+          <div>
+            <label for="name">Nom</label>
+            <input id="name" name="name" autocomplete="name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <div class="container">
-        <h2 class="section-title">Projets</h2>
-        <div class="grid cards">
-          <article class="card reveal">
-            <h5>Orchestration d’agents par langage naturel</h5>
-            <p>Architecture d’agents pilotés par LLM, outils, et exécution conteneurisée pour déploiement interne.</p>
-            <div class="tags"><span class="tag">LLM</span><span class="tag">Agents</span><span class="tag">Docker</span></div>
-          </article>
-          <article class="card reveal">
-            <h5>Moteur de recherche Tapisserie de Bayeux</h5>
-            <p>Recherche multimodale image/texte pour explorer les scènes de la tapisserie avec embeddings.</p>
-            <div class="tags"><span class="tag">CLIP</span><span class="tag">Embeddings</span><span class="tag">Python</span></div>
-          </article>
-          <article class="card reveal">
-            <h5>Assistant CB LCL — Hackathon</h5>
-            <p>Chatbot expert cartes bancaires en 26h : ingestion, raisonnement et réponses fiables.</p>
-            <div class="tags"><span class="tag">Gemini</span><span class="tag">GCP</span><span class="tag">LangChain</span></div>
-          </article>
-          <article class="card reveal">
-            <h5>Automatisations n8n & agents vocaux</h5>
-            <p>Workflows de prospection et support, agents téléphoniques reliés à des LLM et synthèse vocale.</p>
-            <div class="tags"><span class="tag">n8n</span><span class="tag">OpenAI API</span><span class="tag">RAG</span><span class="tag">ElevenLabs</span></div>
-          </article>
+        <label for="subject">Sujet</label>
+        <input id="subject" name="subject" placeholder="Ex. Automatiser une collecte de données / Construire un agent IA" required />
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Bonjour Anis,\n\nNous souhaitons [décrire le besoin].\nContexte : [où / pourquoi].\nContraintes : [délais, budget, sécurité].\nObjectif : [résultat attendu].\n\nMerci !"></textarea>
+        <div class="cta" style="margin-top:10px">
+          <button class="btn" type="submit">Envoyer par email</button>
+          <button class="btn ghost" type="button" id="copyBtn">Copier le message</button>
         </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-grid">
-          <div class="contact-card reveal">
-            <form id="contactForm">
-              <input type="text" id="name" name="name" placeholder="Votre nom" required>
-              <input type="email" id="email" name="email" placeholder="Votre email" required>
-              <textarea id="message" name="message" placeholder="Votre message"></textarea>
-              <div class="cta">
-                <button type="submit" class="btn primary"><i class="fa-regular fa-paper-plane"></i> Envoyer</button>
-                <a class="btn" href="mailto:anisahmedzaid@gmail.com?subject=Contact%20depuis%20le%20site" title="Contacter par email"><i class="fa-solid fa-envelope"></i> Email direct</a>
-                <a class="btn" href="https://www.linkedin.com/in/anis-ahmed-zaid-48179b254" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-              </div>
-            </form>
-          </div>
-          <div class="contact-card reveal">
-            <h3 style="margin-top:0">Disponibilités & modalités</h3>
-            <p class="lead">Mission freelance, stage de fin d’études ou CDI. Réponse rapide et plan d’action sous 24 h pour cadrer un MVP.</p>
-            <ul class="list">
-              <li>Basé en France — ouvert au remote</li>
-              <li>Déploiement on-prem ou cloud • Docker</li>
-              <li>Code versionné • Runbook de reprise</li>
-            </ul>
-            <p><i class="fa-solid fa-file-pdf"></i> <a href="CVAnisAHMEDZAID2025%20-%20V1.pdf" target="_blank" rel="noopener" download>Télécharger le CV (PDF)</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+      </form>
+    </div>
+  </section>
 
   <footer>
-    <div class="container footgrid">
-      <div>© <span id="year"></span> · Anis AHMED ZAID — Tous droits réservés.</div>
-      <div class="socials">
-        <a href="mailto:anisahmedzaid@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
-        <a href="tel:+33652640258" title="Téléphone"><i class="fa-solid fa-phone"></i></a>
-        <a href="https://www.linkedin.com/in/anis-ahmed-zaid-48179b254" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-      </div>
+    <div class="container" style="padding:0">
+      © <span id="y"></span> · Anis AHMED ZAID — Portfolio. Fait avec ❤️ et un peu de JS.
     </div>
   </footer>
+</main>
 
-  <button id="toTop" aria-label="Revenir en haut"><i class="fa-solid fa-arrow-up"></i></button>
-
-  <script>
-    // Year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const mainNav = document.getElementById('mainNav');
-    menuBtn?.addEventListener('click', () => {
-      const ul = mainNav.querySelector('ul');
-      const isOpen = getComputedStyle(ul).display !== 'none';
-      ul.style.display = isOpen ? 'none' : 'flex';
+<script>
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('main section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  const setActive = () => {
+    let current = null;
+    sections.forEach(sec => {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top <= 110 && rect.bottom >= 110) current = sec.id;
     });
-
-    // Reveal on scroll
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
-    }, {threshold: .1});
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-    // Active link on scroll
-    const sections = ['home','about','experience','education','projects','contact'];
-    const navLinks = Array.from(document.querySelectorAll('nav a'));
-    const setActive = () => {
-      let fromTop = window.scrollY + 120;
-      sections.forEach(id => {
-        const sec = document.getElementById(id);
-        if(!sec) return;
-        if(sec.offsetTop <= fromTop && sec.offsetTop + sec.offsetHeight > fromTop){
-          navLinks.forEach(a => a.classList.remove('active'));
-          const current = navLinks.find(a => a.getAttribute('href') === '#' + id);
-          current?.classList.add('active');
-        }
-      });
-    };
-    document.addEventListener('scroll', setActive);
-
-    // To Top button
-    const toTop = document.getElementById('toTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) toTop.classList.add('show'); else toTop.classList.remove('show');
-    });
-    toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
-
-    // Contact form -> mailto helper
-    document.getElementById('contactForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      const subject = encodeURIComponent('Contact depuis le portfolio');
-      const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-      window.location.href = `mailto:anisahmedzaid@gmail.com?subject=${subject}&body=${body}`;
-    });
-
-    // Smooth focus outline only by keyboard
-    const handleFirstTab = (e) => {
-      if (e.key === 'Tab') {
-        document.body.classList.add('user-is-tabbing');
-        window.removeEventListener('keydown', handleFirstTab);
-      }
-    };
-    window.addEventListener('keydown', handleFirstTab);
-  </script>
-
-  <!-- Structured data: Person -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Anis AHMED ZAID",
-    "jobTitle": "Ingénieur en Intelligence Artificielle",
-    "email": "mailto:anisahmedzaid@gmail.com",
-    "telephone": "+33 6 52 64 02 58",
-    "url": "",
-    "sameAs": [
-      "https://www.linkedin.com/in/anis-ahmed-zaid-48179b254"
-    ],
-    "knowsAbout": ["NLP","Vision par ordinateur","Automatisation","LLM","RAG","n8n","OpenAI API","Docker"],
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "ENSICAEN"
+    navLinks.forEach(a => a.removeAttribute('aria-current'));
+    if(current){
+      const active = document.querySelector(`nav a[href="#${current}"]`);
+      if(active) active.setAttribute('aria-current','page');
     }
-  }
-  </script>
+  };
+  document.addEventListener('scroll', setActive, {passive:true});
+  setActive();
+
+  // Contact form -> mailto
+  document.getElementById('contactForm').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    const mail = `mailto:anisahmedzaid@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    window.location.href = mail;
+  });
+  document.getElementById('copyBtn').addEventListener('click', async ()=>{
+    const t = document.getElementById('message').value;
+    try{ await navigator.clipboard.writeText(t); alert('Message copié dans le presse‑papiers.'); }catch{ alert('Impossible de copier automatiquement.'); }
+  });
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+<!-- SEO — JSON‑LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Anis AHMED ZAID",
+  "jobTitle": "Ingénieur en Intelligence Artificielle",
+  "email": "mailto:anisahmedzaid@gmail.com",
+  "telephone": "+33652640258",
+  "url": "",
+  "sameAs": ["https://www.linkedin.com/in/anis-ahmed-zaid-48179b254/"],
+  "knowsAbout": [
+    "NLP", "Computer Vision", "RAG", "LLM Agents", "Automation", "n8n", "Docker", "Python"
+  ]
+}
+</script>
 </body>
 </html>
